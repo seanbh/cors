@@ -21,12 +21,14 @@ export class AppComponent implements OnInit {
       .subscribe((d: any) => {
         console.log(d);
         this.result = `${d.msg} - ${d.access_token}`;
-        this.httpClient
-          .get('http://localhost:3020/', { withCredentials: true })
-          .subscribe((d) => {
-            console.log(d);
-            this.result = d.toString();
-          });
+        setTimeout(() => {
+          this.httpClient
+            .get('http://localhost:3020/', { withCredentials: true })
+            .subscribe((d) => {
+              console.log(d);
+              this.result = d.toString();
+            });
+        }, 1000);
       });
   }
 
