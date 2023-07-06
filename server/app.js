@@ -13,6 +13,9 @@ app.use(
 );
 
 app.get("/", (req, res) => {
+  console.log(req.headers);
+  console.log(req.headers.cookie);
+  console.log(req.cookies);
   res.json("Hello World!");
 });
 
