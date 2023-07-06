@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     // });
 
     this.httpClient
-      .post('http://localhost:3020/login', {})
+      .post('http://localhost:3020/login', {}, { withCredentials: true })
       .subscribe((d: any) => {
         console.log(d);
         this.result = `${d.msg} - ${d.access_token}`;
